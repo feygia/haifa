@@ -1,0 +1,28 @@
+{
+    "תיאור המסמך": "בקשת תשלום",
+    "מאפיינים שחולצו": {
+      "פרטי השולח": {
+        "שם המוסד": "Simon Fraser University",
+        "מחלקה": "Office of Research Services",
+        "טלפון": "(778) 782-9280",
+        "פקס": "(778) 782-3477",
+        "כתובת למשלוח דואר": "Simon Fraser University Office of Research Services 8888 University Drive Discovery 2 Burnaby BC V5A 156 Canada",
+        "כתובת לשליח/מבקרים": "Simon Fraser University Office of Research Services Room 230, Discovery 2 8900 Nelson Way Burnaby BC V5A 4W9 Canada"
+      },
+      "פרטי הנמען": {
+        "שם המוסד": "MINERVA foundation / University of Haifa"
+      },
+      "פרטי תשלום": {
+        "סכום מבוקש": "3,000Euro or $4,503CAN dollars",
+        "מטרת התשלום": "Funding from MINERVA foundation",
+        "תנאי תשלום": "Payment should be in favour of \"Simon Fraser University\" and sent to the above noted address."
+      },
+      "פרטי מסמך": {
+        "תאריך": "November 13, 2024",
+        "מספר אסמכתה": "Kuali #310"
+      },
+      "פרטים נוספים": {
+        "חוקר": "Dr. Gloria Gutman"
+      }
+    }
+  }

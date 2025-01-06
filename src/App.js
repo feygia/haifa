@@ -2,35 +2,63 @@ import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import ErrorMsg from './components/ErrorMsg';
 
-const objTest={"3.jpg": "{\n  \"תיאור_המסמך\": \"גיליון ציונים\",\n  \"הערכת_איכות_התמונה\": \"איכות התמונה סבירה, ניתן לקרוא את רוב הפרטים\",\n  \"מאפיינים_שחולצו\": {\n    \"כותרת\": \"מקצועות חובה והגבר\",\n    \"פרטי_תלמיד\": {\n      \"מספר_זהות\": \"022222228\",\n      \"שם\": \"אור בר\"\n    },\n    \"מקצועות\": [\n      {\n        \"שם_מקצוע\": \"עברית\",\n        \"יחידות_לימוד\": 5,\n        \"ציון\": 97\n      },\n      {\n        \"שם_מקצוע\": \"ערבית\",\n        \"יחידות_לימוד\": 5,\n        \"ציון\": 95\n      },\n      {\n        \"שם_מקצוע\": \"מורשת ודת האסלאם\",\n        \"יחידות_לימוד\": 5,\n        \"ציון\": 98\n      },\n      {\n        \"שם_מקצוע\": \"היסטוריה\",\n        \"יחידות_לימוד\": 2,\n        \"ציון\": 100\n      },\n      {\n        \"שם_מקצוע\": \"אזרחות\",\n        \"יחידות_לימוד\": 2,\n        \"ציון\": 100\n      },\n      {\n        \"שם_מקצוע\": \"אנגלית\",\n        \"יחידות_לימוד\": 4,\n        \"ציון\": 86\n      },\n      {\n        \"שם_מקצוע\": \"מתמטיקה\",\n        \"יחידות_לימוד\": 4,\n        \"ציון\": 97\n      },\n      {\n        \"שם_מקצוע\": \"פיזיקה\",\n        \"יחידות_לימוד\": 5,\n        \"ציון\": 83\n      },\n      {\n        \"שם_מקצוע\": \"כימיה\",\n        \"יחידות_לימוד\": 5,\n        \"ציון\": 95\n      }\n    ],\n    \"מקצועות_פנימיים\": [\n      {\n        \"שם_מקצוע\": \"השכלה כללית במורשת א\",\n        \"שעות_לימוד\": 30,\n        \"ציון\": 100\n      },\n      {\n        \"שם_מקצוע\": \"השכלה כללית במדעים א\",\n        \"שעות_לימוד\": 30,\n        \"ציון\": 98\n      },\n      {\n        \"שם_מקצוע\": \"חינוך גופני\",\n        \"שעות_לימוד\": 180,\n        \"ציון\": 100\n      },\n      {\n        \"שם_מקצוע\": \"מעורבות חברתית\",\n        \"שעות_לימוד\": 180,\n        \"ציון\": \"סיימה בהצטיינות\"\n      }\n    ]\n  }\n}"};
-
 
 const files = [
   {
-    src: "/blur.jpg",
-    name: 'blurred-id',
-    type: "image",
-    url: "2.jpg"
+    src: "/1.pdf",
+    name: '1',
+    type: "pdf",
+    url: "1.json"
   },
   {
-    src: "/id.jpg",
-    name: 'id',
-    type: "image",
-    url: "1.jpg"
+    src: "/2.pdf",
+    name: '2',
+    type: "pdf",
+    url: "2.json"
   },
   {
-    src: "/3.jpg",
+    src: "/3.pdf",
     name: '3',
-    type: "image",
-    url: "3.jpg"
+    type: "pdf",
+    url: "3.json"
   },
+  {
+    src: "/6.pdf",
+    name: '6',
+    type: "pdf",
+    url: "6.json"
+  },
+  {
+    src: "/9.pdf",
+    name: '9',
+    type: "pdf",
+    url: "9.json"
+  },
+  {
+    src: "/10.pdf",
+    name: '10',
+    type: "pdf",
+    url: "10.json"
+  }
+  // {
+  //   src: "/id.jpg",
+  //   name: 'id',
+  //   type: "image",
+  //   url: "1.jpg"
+  // },
+  // {
+  //   src: "/3.jpg",
+  //   name: '3',
+  //   type: "image",
+  //   url: "3.jpg"
+  // },
 ]
 
 function App() {
   const inputRef = useRef()
 
   const [objectURL, setObjectURL] = useState(null)
-  const [parsedContent, setParsedContent] = useState('')
+  const [parsedContent, setParsedContent] = useState([])
   const [description, setDescription] = useState([])
   const [errorMsg, setErrorMsg] = useState('')
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 })
@@ -40,13 +68,12 @@ function App() {
 
 
   useEffect(() => {
-    if (parsedContent.length > 0) {
+    if (parsedContent) {
+      // const replaceHyphens = parsedContent.replace(/_/gi, ' ')
+      // const description = replaceHyphens.split("#")
+      // const lines = description.map(line => line.split("%"))
 
-      const replaceHyphens = parsedContent.replace(/_/gi, ' ')
-      const description = replaceHyphens.split("#")
-      const lines = description.map(line => line.split("%"))
-
-      setDescription(lines)
+      setDescription(parsedContent)
     }
   }, [parsedContent])
 
@@ -74,10 +101,11 @@ function App() {
   }
 
   const getFileDescription = async (url) => {
-    setParsedContent('')
+    setParsedContent([])
     setIsLoading(true)
 
-    fetch(`https://1ln7bb9kb2.execute-api.us-east-1.amazonaws.com/test?image_name=${url}`, {
+    // const path1=`https://1ln7bb9kb2.execute-api.us-east-1.amazonaws.com/test?image_name=${url}`;
+    fetch('./'+url, {
       mode: 'cors',
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
@@ -120,13 +148,14 @@ function App() {
         //   setErrorMsg(data)
         // }
 
-        data = Object.values(data)[0]
+        // data = Object.values(data)[0]
         try {
           const parsedData = JSON.parse(data)
-          setParsedContent(parseResponse(parsedData))
+          // setParsedContent(parseResponse(parsedData))
+          setParsedContent(JsonDisplay(parsedData));
         
         } catch (error) {
-          setParsedContent(parseResponse(data))
+          setParsedContent(JsonDisplay(data))
         }
 
         setIsLoading(false)
@@ -138,9 +167,53 @@ function App() {
       })
   }
 
-  const parseResponse = (content) => {
-    let str = ''
+  const JsonDisplay = (data ) => {
+    const renderJson = (obj, indent = 0) => {
+      return Object.entries(obj).map(([key, value]) => {
+        if (typeof value === 'object' && !Array.isArray(value)) {
+          return (
+            <div key={key}>
+              <div>{`${key}:`}
+              {renderJson(value, indent + 1)} {/* קריאה רקורסיבית לאובייקטים */}
+            </div>
+            </div>
+          );
+        } else if (Array.isArray(value)) {
+          
+          return (
+            <div key={key}>
+              <ul>{`${key}:`}</ul>
+              {value.map((item, index) => {
+                if (typeof item === 'object' && item !== null) {
+                  return (
+                    <li key={index}>
+                      {renderJson(item)} {/* קריאה ל-renderJson במקרה שהפריט הוא אובייקט */}
+                    </li>
+                  );
+                } else {
+                  return (
+                    <li key={index}>{`- ${item}`}</li>
+                  );
+                }
+              })}
+            </div>
+          );
+        } else {
+          return (
+            // <p key={key}>{`${spacing}${key}: ${value}`}</p>
+            <p key={key}>{`${key}:`}<span class="data">{` ${value}`}</span></p>
 
+          );
+        }
+      });
+    };
+  
+    return <div>{renderJson(data)}</div>;
+  };
+  
+  const parseResponse = (content) => {
+    let str = '';
+    
     if (Array.isArray(content)) {
       content.forEach(element => {
         typeof element !== 'object'
@@ -151,7 +224,7 @@ function App() {
     } else if (typeof content === 'object') {
       Object.values(content).map((val, idx) => {
         typeof val !== 'object'
-          ? str += Object.keys(content)[idx] + ': %' + val + "#"
+          ? str +=  Object.keys(content)[idx] + ': %' + val + "#"
           : str += Object.keys(content)[idx] + ': #' + parseResponse(val)
       }
 
@@ -215,13 +288,17 @@ function App() {
             {isLoading && <img className='loader' src='/loader.gif' alt='loader' />}
           </div>
           <div className='description-container scrollbar'>
-            {description.length > 0 &&
+          <div className='description'>
+            {
+            parsedContent
+            /* {description.length > 0 &&
               <div className='description'>
                 {
                   description.map((line, idx) =>
-                    <p key={idx}>{line[0]} <span class="data" >{line[1]}</span></p>)
+                    <p key={idx}>{line[0]} secondary{line[1]}</span></p>)
                 }
-              </div>}
+              </div>} */}
+              </div>
           </div>
         </div>
       }

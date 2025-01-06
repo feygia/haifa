@@ -43,7 +43,7 @@ p {
   .title-box {
     color: rgba(31, 51, 67, 1);
     /* color: rgba(44, 177, 229, 1); */
-    
+
     display: flex;
     flex-direction: column;
   }
@@ -77,17 +77,18 @@ p {
     padding: 16px;
     background: rgba(44, 177, 229, 0.12);
     border: 1px solid rgba(44, 177, 229, 1);
+
     p {
       color: black;
       font-weight: 400;
       /* font-size: 1.25rem; */
-    
+
     }
   }
 }
 
 .back-button {
-  background-color:   rgba(44, 177, 229, 1);
+  background-color: rgba(44, 177, 229, 1);
   color: white;
   display: flex;
   align-items: center;
@@ -272,8 +273,25 @@ p {
     margin-top: 4px;
   }
 
+  ul {
+    margin-top: 4px;
+    padding: 0px;
+
+    li {
+      list-style-type: decimal;
+    }
+  }
+
   span.data {
     font-weight: 400;
+  }
+
+  div {
+    margin-right: 7px;
+
+    p {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -320,6 +338,6 @@ p {
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  background: Turquoise;
+  background: rgb(2, 104, 122);
   border-radius: .5rem;
 }
