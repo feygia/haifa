@@ -104,7 +104,7 @@ function App() {
     setParsedContent([])
     setIsLoading(true)
 
-    // const path1=`https://1ln7bb9kb2.execute-api.us-east-1.amazonaws.com/test?image_name=${url}`;
+    // const path1=`https://1ln7bb9kb2.execute-api.us-east-1.amazonaws.com/test?filename=${url}`;
     fetch('./'+url, {
       mode: 'cors',
       method: 'GET',
