@@ -22,18 +22,18 @@ const files = [
     type: "pdf",
     url: "3.json"
   },
-  // {
-  //   src: "/6.pdf",
-  //   name: '6',
-  //   type: "pdf",
-  //   url: "6.json"
-  // },
-  // {
-  //   src: "/9.pdf",
-  //   name: '9',
-  //   type: "pdf",
-  //   url: "9.json"
-  // },
+  {
+    src: "/6.pdf",
+    name: '6',
+    type: "pdf",
+    url: "6.json"
+  },
+  {
+    src: "/9.pdf",
+    name: '9',
+    type: "pdf",
+    url: "9.json"
+  },
   // {
   //   src: "/10.pdf",
   //   name: '10',
