@@ -5,7 +5,7 @@ import ErrorMsg from './components/ErrorMsg';
 
 const files = [
   {
-    src: "/1.pdf",
+    src: "../1.pdf",
     name: '1',
     type: "pdf",
     url: "1.json"
