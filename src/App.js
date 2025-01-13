@@ -94,7 +94,7 @@ function App() {
     setIsLoading(true)
 
     // const path1=`https://1ln7bb9kb2.execute-api.us-east-1.amazonaws.com/test?filename=${url}`;
-    fetch('./'+url, {
+    fetch(`https://g7vz8538q6.execute-api.us-east-1.amazonaws.com/hifa_poc?filename=${url}`, {
       mode: 'cors',
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
