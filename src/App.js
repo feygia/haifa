@@ -10,48 +10,48 @@ const files = [
     type: "pdf",
     url: "1.json"
   },
-  // {
-  //   src: "/2.pdf",
-  //   name: '2',
-  //   type: "pdf",
-  //   url: "2.json"
-  // },
-  // {
-  //   src: "/3.pdf",
-  //   name: '3',
-  //   type: "pdf",
-  //   url: "3.json"
-  // },
-  // {
-  //   src: "/6.pdf",
-  //   name: '6',
-  //   type: "pdf",
-  //   url: "6.json"
-  // },
-  // {
-  //   src: "/9.pdf",
-  //   name: '9',
-  //   type: "pdf",
-  //   url: "9.json"
-  // },
-  // {
-  //   src: "/10.pdf",
-  //   name: '10',
-  //   type: "pdf",
-  //   url: "10.json"
-  // }
-  // {
-  //   src: "/id.jpg",
-  //   name: 'id',
-  //   type: "image",
-  //   url: "1.jpg"
-  // },
-  // {
-  //   src: "/3.jpg",
-  //   name: '3',
-  //   type: "image",
-  //   url: "3.jpg"
-  // },
+  {
+    src: "/2.pdf",
+    name: '2',
+    type: "pdf",
+    url: "2.json"
+  },
+  {
+    src: "/3.pdf",
+    name: '3',
+    type: "pdf",
+    url: "3.json"
+  },
+  {
+    src: "/6.pdf",
+    name: '6',
+    type: "pdf",
+    url: "6.json"
+  },
+  {
+    src: "/9.pdf",
+    name: '9',
+    type: "pdf",
+    url: "9.json"
+  },
+  {
+    src: "/10.pdf",
+    name: '10',
+    type: "pdf",
+    url: "10.json"
+  }
+  {
+    src: "/id.jpg",
+    name: 'id',
+    type: "image",
+    url: "1.jpg"
+  },
+  {
+    src: "/3.jpg",
+    name: '3',
+    type: "image",
+    url: "3.jpg"
+  },
 ]
 
 function App() {
