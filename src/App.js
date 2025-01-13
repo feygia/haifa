@@ -40,18 +40,7 @@ const files = [
     type: "pdf",
     url: "10.json"
   },
-  {
-    src: "/id.jpg",
-    name: 'id',
-    type: "image",
-    url: "1.jpg"
-  },
-  {
-    src: "/3.jpg",
-    name: '3',
-    type: "image",
-    url: "3.jpg"
-  }
+
 ]
 
 function App() {
