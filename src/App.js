@@ -8,37 +8,37 @@ const files = [
     src: "/1.pdf",
     name: '1',
     type: "pdf",
-    url: "1.json"
+    url: "1.pdf"
   },
   {
     src: "/2.pdf",
     name: '2',
     type: "pdf",
-    url: "2.json"
+    url: "2.pdf"
   },
   {
     src: "/3.pdf",
     name: '3',
     type: "pdf",
-    url: "3.json"
+    url: "3.pdf"
   },
   {
     src: "/6.pdf",
     name: '6',
     type: "pdf",
-    url: "6.json"
+    url: "6.pdf"
   },
   {
     src: "/9.pdf",
     name: '9',
     type: "pdf",
-    url: "9.json"
+    url: "9.pdf"
   },
   {
     src: "/10.pdf",
     name: '10',
     type: "pdf",
-    url: "10.json"
+    url: "10.pdf"
   },
 
 ]
