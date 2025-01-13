@@ -39,7 +39,7 @@ const files = [
     name: '10',
     type: "pdf",
     url: "10.json"
-  }
+  },
   {
     src: "/id.jpg",
     name: 'id',
@@ -51,7 +51,7 @@ const files = [
     name: '3',
     type: "image",
     url: "3.jpg"
-  },
+  }
 ]
 
 function App() {
